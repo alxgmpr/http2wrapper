@@ -142,6 +142,7 @@ const put = (url, headers = null, body = null, timeout = DEFAULT_TIMEOUT) => _po
  * headers: object
  * timeout: integer
  */
-const delete = (url, headers = null, timeout = DEFAULT_TIMEOUT) => _get(url, headers, timeout, 'DELETE');
+// Have to use _delete here since 'delete' is a JS keyword
+const _delete = (url, headers = null, timeout = DEFAULT_TIMEOUT) => _get(url, headers, timeout, 'DELETE');
 
-module.exports = {get, post, put};
+module.exports = {get, post, put, _delete};
